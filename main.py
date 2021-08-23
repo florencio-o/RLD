@@ -9,7 +9,7 @@ document = Document()
 
 document.add_heading('Generic Test Title', 0)
 
-p = document.add_paragraph('Generic description for said test ')
+document.add_paragraph('Generic description for said test ')
 
 i = 1
 
@@ -21,7 +21,7 @@ with open('test.csv', 'r') as read_obj:
 
 			print(f"Working on question {i}..")
 
-			answers = list([row['Correct'], row['Incorrect1'], row['Incorrect2'], row['Incorrect3']])
+			answers = list([row['Correct'], row['Distractor1'], row['Distractor2'], row['Distractor3']])
 
 			random.seed()
 			random.shuffle(answers)
