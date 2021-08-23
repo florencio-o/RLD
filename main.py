@@ -44,4 +44,4 @@ footer_para.text = "\tGenerated with love by Florencio"
 
 document.save('demo.docx')
 
-print("Document is now complete! You can go ahead and download it now under 'demo.docx'")
+print("Document is now complete! It should be named as 'demo.docx'")
