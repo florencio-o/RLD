@@ -1,0 +1,7 @@
+.replit
+*.lock
+*.toml
+*.docx
+*.csv
+*.xlsx
+!test.csv
