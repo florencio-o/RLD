@@ -34,9 +34,12 @@ jobs:
     - name: Build program
       run: |
         python setup.py build
+    - name: Zip artifacts
+        run: |
+          zip -r artifacts.zip builds/*
     - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
           name: build
           path: |
-            build
+            artifacts.zip
