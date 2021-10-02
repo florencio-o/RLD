@@ -5,7 +5,13 @@ from docx.shared import Inches
 
 from csv import DictReader
 
+from config import version
+
 document = Document()
+
+# displays info about program
+print(f"RLD {version}")
+print("Written by Florencio\n")
 
 # sets document title
 document.add_heading('Generic Test Title', 0)
@@ -16,8 +22,13 @@ document.add_paragraph('Generic description for said test ')
 # set current question number to one
 i = 1
 
+# asks for file name
+input_file = input("Whats the name of the file you want to convert?\n")
+
+output_file = input("Whats the name you'd like to name the document?\n")
+
 # opens test.csv as read_obj
-with open('test.csv', 'r') as read_obj:
+with open(f"{input_file}.csv", 'r') as read_obj:
 		csv_dict_reader = DictReader(read_obj)
 
 		# begins to read each row
@@ -57,7 +68,8 @@ footer_para = footer.paragraphs[0]
 footer_para.text = "\tGenerated with love by Florencio"
 
 # save document
-document.save('demo.docx')
+document.save(f"{output_file}.docx")
 
 # lets the user know that the document is now complete
-print("Document is now complete! It should be named as 'demo.docx'")
+print(f"Document is now complete! Saved as '{output_file}.docx'\n")
+input("Press enter to end the program")
