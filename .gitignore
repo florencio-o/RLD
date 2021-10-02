@@ -4,4 +4,7 @@
 *.docx
 *.csv
 *.xlsx
+.vscode/*
+build/*
+__pycache__
 !test.csv
